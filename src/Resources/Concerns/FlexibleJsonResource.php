@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\Resources\Concerns;
+namespace TheSoftPulze\LaravibeStandards\Resources\Concerns;
 
 use Closure;
 use Illuminate\Contracts\Support\Jsonable;

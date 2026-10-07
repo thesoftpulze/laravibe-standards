@@ -24,7 +24,7 @@ After publishing, generated resources use the package base classes automatically
 php artisan make:resource UserResource
 ```
 
-This generates a class extending `SoftPulze\LaravibeStandards\Resources\AppResource`:
+This generates a class extending `TheSoftPulze\LaravibeStandards\Resources\AppResource`:
 
 ```php
 final class UserResource extends AppResource

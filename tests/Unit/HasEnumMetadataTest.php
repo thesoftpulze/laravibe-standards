@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use SoftPulze\LaravibeStandards\Tests\Fixtures\Priority;
-use SoftPulze\LaravibeStandards\Tests\Fixtures\ToastType;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\Priority;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\ToastType;
 
 // options()
 

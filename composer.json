@@ -1,13 +1,13 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "softpulze/laravibe-standards",
+    "name": "thesoftpulze/laravibe-standards",
     "description": "Standard conventions, structure, and tooling for Laravel apps built the LaraVibe way.",
     "keywords": [
         "laravel",
-        "softpulze",
+        "thesoftpulze",
         "laravibe-standards"
     ],
-    "homepage": "https://github.com/softpulze/laravibe-standards",
+    "homepage": "https://github.com/thesoftpulze/laravibe-standards",
     "license": "MIT",
     "authors": [
         {
@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SoftPulze\\LaravibeStandards\\": "src/"
+            "TheSoftPulze\\LaravibeStandards\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SoftPulze\\LaravibeStandards\\Tests\\": "tests/",
+            "TheSoftPulze\\LaravibeStandards\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/",
             "Workbench\\Database\\Factories\\": "workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
@@ -87,10 +87,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SoftPulze\\LaravibeStandards\\LaravibeStandardsServiceProvider"
+                "TheSoftPulze\\LaravibeStandards\\LaravibeStandardsServiceProvider"
             ],
             "aliases": {
-                "LaravibeStandards": "SoftPulze\\LaravibeStandards\\Facades\\LaravibeStandards"
+                "LaravibeStandards": "TheSoftPulze\\LaravibeStandards\\Facades\\LaravibeStandards"
             }
         }
     },

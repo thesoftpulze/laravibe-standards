@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Pagination\LengthAwarePaginator;
-use SoftPulze\LaravibeStandards\Resources\AppResourceCollection;
+use TheSoftPulze\LaravibeStandards\Resources\AppResourceCollection;
 
 it('wraps items via toInertia when collects is set', function () {
     $resource = new class(new stdClass) extends JsonResource

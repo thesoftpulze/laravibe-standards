@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards;
+namespace TheSoftPulze\LaravibeStandards;
 
 use Illuminate\Support\ServiceProvider;
-use SoftPulze\LaravibeStandards\Console\Commands\MakeDTOCommand;
+use TheSoftPulze\LaravibeStandards\Console\Commands\MakeDTOCommand;
 
 class LaravibeStandardsServiceProvider extends ServiceProvider
 {

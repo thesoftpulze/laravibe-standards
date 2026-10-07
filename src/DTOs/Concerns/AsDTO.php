@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\DTOs\Concerns;
+namespace TheSoftPulze\LaravibeStandards\DTOs\Concerns;
 
 use BackedEnum;
 use DateTimeImmutable;
