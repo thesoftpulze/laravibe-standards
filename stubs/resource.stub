@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace {{ namespace }};
 
 use Illuminate\Http\Request;
-use SoftPulze\LaravibeStandards\Resources\AppResource;
+use TheSoftPulze\LaravibeStandards\Resources\AppResource;
 
 final class {{ class }} extends AppResource
 {

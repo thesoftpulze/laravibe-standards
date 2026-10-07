@@ -1,7 +1,7 @@
 ---
 name: laravibe-standards-development
 description: >
-  Use when creating, editing, or refactoring DTOs, Enums, API Resources, Action classes, or publishing stubs in a Laravel application installed with softpulze/laravibe-standards.
+  Use when creating, editing, or refactoring DTOs, Enums, API Resources, Action classes, or publishing stubs in a Laravel application installed with thesoftpulze/laravibe-standards.
 license: MIT
 metadata:
   author: Ashok Barua Akas
@@ -13,7 +13,7 @@ Use this skill when a Laravel application needs to integrate the Laravibe Standa
 
 ## Primary Goal
 
-- apply the `softpulze/laravibe-standards` package's public API in the smallest correct way
+- apply the `thesoftpulze/laravibe-standards` package's public API in the smallest correct way
 
 ## Workflow
 
@@ -48,8 +48,8 @@ The package provides base resource classes for API and Inertia responses with re
 
 - generate a resource: `php artisan make:resource {Name}` (uses package stubs after publishing)
 - generate a collection: `php artisan make:resource {Name}Collection --collection`
-- extend `SoftPulze\LaravibeStandards\Resources\AppResource` for single resources
-- extend `SoftPulze\LaravibeStandards\Resources\AppResourceCollection` for collections
+- extend `TheSoftPulze\LaravibeStandards\Resources\AppResource` for single resources
+- extend `TheSoftPulze\LaravibeStandards\Resources\AppResourceCollection` for collections
 - use helpers in `toArray()`: `id()`, `attribute()`, `optionalAttribute()`, `relation()`
 - use `toInertia()` when passing resources to `inertia()` props
 
@@ -79,7 +79,7 @@ Follow these rules when creating DTOs with Laravibe Standards.
 ### Class Rules
 
 - Every DTO must be a `final readonly` class.
-- Every DTO must use `SoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO`.
+- Every DTO must use `TheSoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO`.
 - Implement `Arrayable` and `Jsonable` when used as shared response payloads.
 
 ### Naming Rules
@@ -161,8 +161,8 @@ Follow these rules when creating resources with Laravibe Standards.
 ### Class Rules
 
 - Every resource must be a `final class`.
-- Single resources must extend `\SoftPulze\LaravibeStandards\Resources\AppResource`.
-- Collection resources must extend `\SoftPulze\LaravibeStandards\Resources\AppResourceCollection`.
+- Single resources must extend `\TheSoftPulze\LaravibeStandards\Resources\AppResource`.
+- Collection resources must extend `\TheSoftPulze\LaravibeStandards\Resources\AppResourceCollection`.
 - Implement `Illuminate\Http\Request` type-hinting in `toArray()`.
 
 ### Naming Rules
@@ -208,7 +208,7 @@ Read before executing:
 // 2. Define the constructor parameters
 final readonly class UpdateProfileDTO implements Arrayable, Jsonable
 {
-    use \SoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;
+    use \TheSoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;
 
     public function __construct(
         public string $name,

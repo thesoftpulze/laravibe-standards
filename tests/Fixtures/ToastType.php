@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\Tests\Fixtures;
+namespace TheSoftPulze\LaravibeStandards\Tests\Fixtures;
 
-use SoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata;
+use TheSoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata;
 
 enum ToastType: int
 {

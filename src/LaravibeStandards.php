@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards;
+namespace TheSoftPulze\LaravibeStandards;
 
 class LaravibeStandards
 {

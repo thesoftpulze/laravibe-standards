@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 use Carbon\CarbonImmutable;
 use Illuminate\Http\Request;
-use SoftPulze\LaravibeStandards\Tests\Fixtures\AccountDTO;
-use SoftPulze\LaravibeStandards\Tests\Fixtures\AccountStatus;
-use SoftPulze\LaravibeStandards\Tests\Fixtures\ContactDTO;
-use SoftPulze\LaravibeStandards\Tests\Fixtures\StrictDTO;
-use SoftPulze\LaravibeStandards\Tests\Fixtures\UserProfileDTO;
-use SoftPulze\LaravibeStandards\Tests\Fixtures\UserRole;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\AccountDTO;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\AccountStatus;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\ContactDTO;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\StrictDTO;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\UserProfileDTO;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\UserRole;
 
 // from() / fromArray()
 

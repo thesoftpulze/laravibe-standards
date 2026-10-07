@@ -19,7 +19,7 @@ Enums define finite domain values and expose a shared, predictable helper contra
 
 ## Shared Concern
 
-Use `SoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata` as the base concern for common enum behavior.
+Use `TheSoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata` as the base concern for common enum behavior.
 
 ### Core Contract (Required)
 
@@ -49,7 +49,7 @@ declare(strict_types=1);
 
 namespace App\Enums;
 
-use SoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata;
+use TheSoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata;
 
 enum ToastType: int
 {

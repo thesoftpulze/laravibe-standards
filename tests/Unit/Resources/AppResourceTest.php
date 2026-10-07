@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use SoftPulze\LaravibeStandards\Resources\AppResource;
-use SoftPulze\LaravibeStandards\Resources\AppResourceCollection;
+use TheSoftPulze\LaravibeStandards\Resources\AppResource;
+use TheSoftPulze\LaravibeStandards\Resources\AppResourceCollection;
 
 it('resolves to a plain array via toInertia', function () {
     $model = new class(['id' => 1, 'name' => 'Alice'])

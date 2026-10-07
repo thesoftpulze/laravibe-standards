@@ -25,7 +25,7 @@ it('generates a single resource with package stub', function () {
     $path = app_path('Http/Resources/UserResource.php');
 
     expect(File::exists($path))->toBeTrue();
-    expect(File::get($path))->toContain('use SoftPulze\LaravibeStandards\Resources\AppResource;');
+    expect(File::get($path))->toContain('use TheSoftPulze\LaravibeStandards\Resources\AppResource;');
     expect(File::get($path))->toContain('final class UserResource extends AppResource');
 });
 
@@ -38,6 +38,6 @@ it('generates a collection resource with package stub', function () {
     $path = app_path('Http/Resources/UserCollection.php');
 
     expect(File::exists($path))->toBeTrue();
-    expect(File::get($path))->toContain('use SoftPulze\LaravibeStandards\Resources\AppResourceCollection;');
+    expect(File::get($path))->toContain('use TheSoftPulze\LaravibeStandards\Resources\AppResourceCollection;');
     expect(File::get($path))->toContain('final class UserCollection extends AppResourceCollection');
 });

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\Tests\Fixtures;
+namespace TheSoftPulze\LaravibeStandards\Tests\Fixtures;
 
 enum UserRole
 {

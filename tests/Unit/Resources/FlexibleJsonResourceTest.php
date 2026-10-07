@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Carbon;
-use SoftPulze\LaravibeStandards\Resources\AppResource;
+use TheSoftPulze\LaravibeStandards\Resources\AppResource;
 
 function makeModel(array $attributes = [], array $loadedRelations = []): object
 {

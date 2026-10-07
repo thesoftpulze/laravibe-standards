@@ -21,7 +21,7 @@ it('generates a DTO class in the default namespace', function () {
     expect(File::exists($path))->toBeTrue();
     expect(File::get($path))->toContain('namespace App\DTOs;');
     expect(File::get($path))->toContain('final readonly class UserDTO');
-    expect(File::get($path))->toContain('use SoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;');
+    expect(File::get($path))->toContain('use TheSoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;');
 });
 
 it('generates a DTO with a nested namespace', function () {

@@ -3,11 +3,11 @@
 </div>
 
 <p align="center">
-    <a href="https://packagist.org/packages/softpulze/laravibe-standards"><img src="https://img.shields.io/packagist/v/softpulze/laravibe-standards.svg?style=flat-square" alt="Packagist"></a>
-    <a href="https://packagist.org/packages/softpulze/laravibe-standards"><img src="https://img.shields.io/packagist/php-v/softpulze/laravibe-standards.svg?style=flat-square" alt="PHP from Packagist"></a>
-    <a href="https://packagist.org/packages/softpulze/laravibe-standards"><img src="https://badge.laravel.cloud/badge/softpulze/laravibe-standards?style=flat" alt="Laravel versions"></a>
-    <a href="https://github.com/softpulze/laravibe-standards/actions"><img alt="GitHub Workflow Status (main)" src="https://img.shields.io/github/actions/workflow/status/softpulze/laravibe-standards/tests.yml?branch=main&label=Tests&style=flat-square"></a>
-    <a href="https://packagist.org/packages/softpulze/laravibe-standards"><img src="https://img.shields.io/packagist/dt/softpulze/laravibe-standards.svg?style=flat-square" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://img.shields.io/packagist/v/thesoftpulze/laravibe-standards.svg?style=flat-square" alt="Packagist"></a>
+    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://img.shields.io/packagist/php-v/thesoftpulze/laravibe-standards.svg?style=flat-square" alt="PHP from Packagist"></a>
+    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://badge.laravel.cloud/badge/thesoftpulze/laravibe-standards?style=flat" alt="Laravel versions"></a>
+    <a href="https://github.com/thesoftpulze/laravibe-standards/actions"><img alt="GitHub Workflow Status (main)" src="https://img.shields.io/github/actions/workflow/status/thesoftpulze/laravibe-standards/tests.yml?branch=main&label=Tests&style=flat-square"></a>
+    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://img.shields.io/packagist/dt/thesoftpulze/laravibe-standards.svg?style=flat-square" alt="Total Downloads"></a>
 </p>
 
 Standard conventions, structure, and tooling for Laravel apps built the LaraVibe way.
@@ -17,7 +17,7 @@ Standard conventions, structure, and tooling for Laravel apps built the LaraVibe
 You can install the package via Composer:
 
 ```bash
-composer require softpulze/laravibe-standards
+composer require thesoftpulze/laravibe-standards
 ```
 
 You may publish all of the package's resources at once:
@@ -58,7 +58,7 @@ php artisan make:dto Account/UpdateProfileDTO
 ```php
 final readonly class UserProfileDTO implements Arrayable, Jsonable
 {
-    use \SoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;
+    use \TheSoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;
 
     public function __construct(
         public string $name,
@@ -99,7 +99,7 @@ php artisan make:enum ToastType --string
 ```php
 enum ToastType: int
 {
-    use \SoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata;
+    use \TheSoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata;
 
     case Error = 1;
     case Success = 2;
@@ -134,7 +134,7 @@ php artisan make:resource UserCollection --collection
 **Define a resource:**
 
 ```php
-final class UserResource extends \SoftPulze\LaravibeStandards\Resources\AppResource
+final class UserResource extends \TheSoftPulze\LaravibeStandards\Resources\AppResource
 {
     public function toArray(Request $request): array
     {
@@ -174,7 +174,7 @@ Please review [our security policy](.github/SECURITY.md) on how to report securi
 
 ## Credits
 
-- [Ashok Barua Akas](https://github.com/softpulze)
+- [Ashok Barua Akas](https://github.com/thesoftpulze)
 - [All Contributors](../../contributors)
 
 ## License

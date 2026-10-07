@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\Enums\Concerns;
+namespace TheSoftPulze\LaravibeStandards\Enums\Concerns;
 
 use BackedEnum;
 use InvalidArgumentException;

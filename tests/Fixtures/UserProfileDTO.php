@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\Tests\Fixtures;
+namespace TheSoftPulze\LaravibeStandards\Tests\Fixtures;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
-use SoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;
+use TheSoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;
 
 /**
  * @implements Arrayable<string, mixed>

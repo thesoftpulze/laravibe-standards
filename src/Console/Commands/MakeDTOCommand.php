@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\Console\Commands;
+namespace TheSoftPulze\LaravibeStandards\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Override;

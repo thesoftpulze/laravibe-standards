@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace SoftPulze\LaravibeStandards\Resources;
+namespace TheSoftPulze\LaravibeStandards\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use Override;
-use SoftPulze\LaravibeStandards\Resources\Concerns\FlexibleJsonResource;
+use TheSoftPulze\LaravibeStandards\Resources\Concerns\FlexibleJsonResource;
 
 abstract class AppResource extends JsonResource
 {
