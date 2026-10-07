@@ -1,6 +1,21 @@
 # Release Notes
 
-## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.3.5...HEAD)
+## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.4.0...HEAD)
+
+## [v0.4.0](https://github.com/thesoftpulze/laravibe-standards/compare/v0.3.5...v0.4.0) - 2026-10-07
+
+<!-- Release notes generated using configuration in .github/release.yml at v0.4.0 -->
+### What's Changed
+
+#### Breaking Changes
+
+* refactor: rename package to thesoftpulze/laravibe-standards by @ashokbaruaakas in https://github.com/thesoftpulze/laravibe-standards/pull/12
+
+#### Maintenance
+
+* chore: raise phpstan memory limit for composer test by @ashokbaruaakas in https://github.com/thesoftpulze/laravibe-standards/pull/13
+
+**Full Changelog**: https://github.com/thesoftpulze/laravibe-standards/compare/v0.3.5...v0.4.0
 
 ## [v0.3.5](https://github.com/softpulze/laravibe-standards/compare/v0.3.4...v0.3.5) - 2026-07-27
 
