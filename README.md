@@ -20,6 +20,19 @@ You can install the package via Composer:
 composer require thesoftpulze/laravibe-standards
 ```
 
+### Upgrading from `softpulze/laravibe-standards`
+
+This package was previously published as `softpulze/laravibe-standards` and used the `SoftPulze\LaravibeStandards` namespace. The old package is abandoned, and both the package name and namespace changed in `v0.4.0`.
+
+1. Replace the requirement in your `composer.json`:
+
+   ```bash
+   composer remove softpulze/laravibe-standards
+   composer require thesoftpulze/laravibe-standards
+   ```
+
+2. Update namespace imports and references from `SoftPulze\LaravibeStandards\...` to `TheSoftPulze\LaravibeStandards\...`.
+
 You may publish all of the package's resources at once:
 
 ```bash
