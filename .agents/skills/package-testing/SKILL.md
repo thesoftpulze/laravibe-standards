@@ -41,3 +41,4 @@ Prove package behavior with Pest 4, Orchestra Testbench, and the local `tests/Te
 - Relying only on smoke tests when behavior needs assertions.
 - Testing implementation details when observable package behavior is available.
 - Keeping throwaway scaffolding experiment tests in the package test suite.
+- Writing to or deleting shared paths in the Testbench app, such as `base_path('stubs/...')`, from more than one test file. `composer test:unit` runs in parallel against one Testbench skeleton, so those tests race. Assert on registered state instead, for example `ServiceProvider::pathsToPublish()`.
