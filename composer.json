@@ -88,10 +88,7 @@
         "laravel": {
             "providers": [
                 "TheSoftPulze\\LaravibeStandards\\LaravibeStandardsServiceProvider"
-            ],
-            "aliases": {
-                "LaravibeStandards": "TheSoftPulze\\LaravibeStandards\\Facades\\LaravibeStandards"
-            }
+            ]
         }
     },
     "config": {

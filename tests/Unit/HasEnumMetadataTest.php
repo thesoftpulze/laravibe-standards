@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use TheSoftPulze\LaravibeStandards\Tests\Fixtures\Priority;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\TaskStatus;
 use TheSoftPulze\LaravibeStandards\Tests\Fixtures\ToastType;
 
 // options()
@@ -101,8 +102,12 @@ it('generates human-readable label from backed enum name', function () {
     expect(ToastType::Success->label())->toBe('Success');
 });
 
+it('generates human-readable label from multi-word TitleCase names', function () {
+    expect(TaskStatus::InProgress->label())->toBe('In Progress');
+});
+
 it('generates human-readable label with underscores', function () {
-    expect(ToastType::Warning->label())->toBe('Warning');
+    expect(TaskStatus::ON_HOLD->label())->toBe('On Hold');
 });
 
 // toOption()

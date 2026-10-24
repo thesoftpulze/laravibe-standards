@@ -74,10 +74,14 @@ trait HasEnumMetadata
 
     public function label(): string
     {
-        return str($this->name)
-            ->replace('_', ' ')
-            ->title()
-            ->toString();
+        $name = str($this->name);
+
+        // Headline splits on capitals, so SCREAMING_CASE names are lowered first.
+        if ($name->upper()->toString() === $this->name) {
+            $name = $name->lower();
+        }
+
+        return $name->headline()->toString();
     }
 
     /**

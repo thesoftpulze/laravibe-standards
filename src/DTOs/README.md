@@ -15,7 +15,7 @@ DTOs provide a small and typed boundary between HTTP payloads, actions, services
 
 - Store DTOs in app/DTOs or app/DTOs/{Domain}.
 - Use singular names with DTO suffix, for example UserProfileDTO.
-- Every DTO must be final readonly and use App\DTOs\Concerns\AsDTO.
+- Every DTO must be final readonly and use TheSoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO.
 - Keep DTOs focused on data transfer; avoid business logic in DTOs.
 
 ## Manual DTO Example
@@ -54,7 +54,7 @@ Create a DTO with:
 php artisan make:dto Account/UpdateProfileDTO
 ```
 
-The command uses stubs/dto.stub and creates the class under app/DTOs.
+The command creates the class under app/DTOs. It uses the published stub at stubs/laravibe-standards/dto.stub when present, and the package stub otherwise.
 
 ## Hydration and Serialization
 

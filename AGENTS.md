@@ -54,4 +54,4 @@ Do not manually populate `[Unreleased]` in CHANGELOG.md. The workflow handles CH
 - `package-testing`: use when adding or changing package tests with Pest 4 and Orchestra Testbench.
 - `package-release`: use when preparing changelog, release notes, tags, or GitHub release workflow changes.
 - `package-compatibility`: use when reviewing code, dependencies, or CI against the PHP 8.4+ and Laravel 13+ support matrix.
-- `package-generate-skill`: use when updating the bundled Boost skill from the package implementation, README, and examples.
+- `package-generate-skill`: use when updating the bundled Boost guideline or skills from the package implementation, README, and examples.
