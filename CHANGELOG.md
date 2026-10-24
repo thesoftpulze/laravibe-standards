@@ -1,6 +1,21 @@
 # Release Notes
 
-## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.4.0...HEAD)
+## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.5.0...HEAD)
+
+## [v0.5.0](https://github.com/thesoftpulze/laravibe-standards/compare/v0.4.0...v0.5.0) - 2026-10-24
+
+<!-- Release notes generated using configuration in .github/release.yml at v0.5.0 -->
+### What's Changed
+
+#### Breaking Changes
+
+* feat!: add Boost guideline, split skills, fix stubs and collections by @ashokbaruaakas in https://github.com/thesoftpulze/laravibe-standards/pull/16
+
+#### Documentation
+
+* docs: add upgrade guide from softpulze/laravibe-standards by @ashokbaruaakas in https://github.com/thesoftpulze/laravibe-standards/pull/14
+
+**Full Changelog**: https://github.com/thesoftpulze/laravibe-standards/compare/v0.4.0...v0.5.0
 
 ## [v0.4.0](https://github.com/thesoftpulze/laravibe-standards/compare/v0.3.5...v0.4.0) - 2026-10-07
 
