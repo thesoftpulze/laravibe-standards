@@ -33,25 +33,15 @@ This package was previously published as `softpulze/laravibe-standards` and used
 
 2. Update namespace imports and references from `SoftPulze\LaravibeStandards\...` to `TheSoftPulze\LaravibeStandards\...`.
 
-You may publish all of the package's resources at once:
-
-```bash
-php artisan vendor:publish --tag="laravibe-standards"
-```
-
-Or, you may publish each resource individually:
-
-### Publishing the Configuration File
-
-```bash
-php artisan vendor:publish --tag="laravibe-standards-config"
-```
-
 ### Publishing Stubs
+
+Publish the package stubs so Laravel's `make:enum` and `make:resource` commands, and the package's `make:dto` command, generate classes that follow these conventions:
 
 ```bash
 php artisan vendor:publish --tag="laravibe-standards-stubs"
 ```
+
+Without the published stubs, `make:enum` and `make:resource` generate plain Laravel classes.
 
 ## Usage
 

@@ -10,6 +10,15 @@ This repository is a Laravel package. Keep the package focused, idiomatic, and e
 - Prefer explicit Laravel package code over helper abstractions unless the extension point is real.
 - Keep tests focused on observable package behavior through public APIs, service provider wiring, commands, routes, published resources, and documentation promises.
 
+## Package Map
+
+- `src/DTOs`, `src/Enums`, `src/Resources`: the public API (`AsDTO`, `HasEnumMetadata`, `AppResource`, `AppResourceCollection`), each with a `README.md` guide.
+- `src/Console/Commands`: the `make:dto` command. `make:enum` and `make:resource` are Laravel's own commands, customized only through the published stubs.
+- `stubs/`: generator stubs, published with the `laravibe-standards-stubs` tag.
+- `resources/boost/`: the Boost guideline and skills installed into consuming applications. `tests/Feature/BoostResourcesTest.php` fails if they reference classes, methods, or publish tags that don't exist.
+
+When public behavior changes, update `README.md`, the matching `src/*/README.md`, and the Boost guideline or skills in the same change.
+
 ## Quick Commands
 
 - Full validation: `composer test`
@@ -54,4 +63,4 @@ Do not manually populate `[Unreleased]` in CHANGELOG.md. The workflow handles CH
 - `package-testing`: use when adding or changing package tests with Pest 4 and Orchestra Testbench.
 - `package-release`: use when preparing changelog, release notes, tags, or GitHub release workflow changes.
 - `package-compatibility`: use when reviewing code, dependencies, or CI against the PHP 8.4+ and Laravel 13+ support matrix.
-- `package-generate-skill`: use when updating the bundled Boost skill from the package implementation, README, and examples.
+- `package-generate-skill`: use when updating the bundled Boost guideline or skills from the package implementation, README, and examples.

@@ -9,9 +9,15 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Pagination\AbstractCursorPaginator;
 use Illuminate\Pagination\AbstractPaginator;
+use Override;
 
 class AppResourceCollection extends ResourceCollection
 {
+    /**
+     * Indicates if the collection keys should be preserved.
+     */
+    public bool $preserveKeys = false;
+
     public function __construct(mixed $resource, ?string $collects = null)
     {
         if ($collects !== null) {
@@ -22,17 +28,36 @@ class AppResourceCollection extends ResourceCollection
     }
 
     /**
+     * Indicate that the collection keys should be preserved.
+     */
+    public function preserveKeys(bool $value = true): static
+    {
+        $this->preserveKeys = $value;
+
+        return $this;
+    }
+
+    /**
      * Get the resource that this resource collection collects.
      *
-     * Skips the name-based guess to avoid resolving to the abstract AppResource.
-     * App-level collections should set $collects explicitly or override this method.
+     * The base collection skips Laravel's name-based guess, which would resolve to the
+     * abstract AppResource. Subclasses such as UserCollection keep the guess, so they
+     * collect UserResource without setting $collects explicitly.
      *
      * @return class-string<JsonResource>|null
      */
+    #[Override]
     protected function collects(): ?string
     {
+        if (static::class === self::class) {
+            /** @var class-string<JsonResource>|null $collects */
+            $collects = $this->collects;
+
+            return $collects;
+        }
+
         /** @var class-string<JsonResource>|null $collects */
-        $collects = $this->collects;
+        $collects = parent::collects();
 
         return $collects;
     }

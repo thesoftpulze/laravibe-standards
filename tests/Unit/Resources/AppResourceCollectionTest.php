@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Pagination\LengthAwarePaginator;
 use TheSoftPulze\LaravibeStandards\Resources\AppResourceCollection;
+use TheSoftPulze\LaravibeStandards\Tests\Fixtures\Resources\UserCollection;
 
 it('wraps items via toInertia when collects is set', function () {
     $resource = new class(new stdClass) extends JsonResource
@@ -78,4 +80,30 @@ it('returns pagination information for a paginated collection', function () {
     expect($result['meta'])->toHaveKey('current_page', 1);
     expect($result['meta'])->toHaveKey('per_page', 2);
     expect($result['meta'])->toHaveKey('total', 10);
+});
+
+it('guesses the collected resource from the collection class name', function () {
+    $user = new User;
+    $user->forceFill(['id' => 7, 'name' => 'Alice']);
+
+    $collection = new UserCollection([$user]);
+
+    expect($collection->toInertia())->toBe([['id' => 7, 'display_name' => 'Alice']]);
+});
+
+it('guesses the collected resource for a paginated collection', function () {
+    $user = new User;
+    $user->forceFill(['id' => 7, 'name' => 'Alice']);
+
+    $paginator = new LengthAwarePaginator(
+        items: [$user],
+        total: 1,
+        perPage: 15,
+        currentPage: 1,
+        options: ['path' => 'http://localhost'],
+    );
+
+    $result = new UserCollection($paginator)->toInertia();
+
+    expect($result['data'])->toBe([['id' => 7, 'display_name' => 'Alice']]);
 });

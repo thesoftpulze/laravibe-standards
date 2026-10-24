@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace TheSoftPulze\LaravibeStandards\Resources;
 
+use Illuminate\Http\Resources\Attributes\PreserveKeys;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Override;
+use ReflectionClass;
 use TheSoftPulze\LaravibeStandards\Resources\Concerns\FlexibleJsonResource;
 
 abstract class AppResource extends JsonResource
@@ -20,6 +22,24 @@ abstract class AppResource extends JsonResource
     final public function toInertia(): array
     {
         return $this->resolve();
+    }
+
+    /**
+     * Create a new resource collection instance.
+     *
+     * Mirrors JsonResource::collection() with a narrowed return type, so static analysis
+     * sees toInertia() on UserResource::collection($users).
+     */
+    #[Override]
+    public static function collection(mixed $resource): AppResourceCollection
+    {
+        $collection = static::newCollection($resource);
+        $reflection = new ReflectionClass(static::class);
+
+        $collection->preserveKeys = $reflection->getAttributes(PreserveKeys::class) !== []
+            || ($reflection->getDefaultProperties()['preserveKeys'] ?? false) === true;
+
+        return $collection;
     }
 
     /**

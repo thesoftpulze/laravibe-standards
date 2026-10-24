@@ -1,11 +1,18 @@
+# Dependencies
 /vendor
-/build
-/.phpunit.cache
-/.phpunit.result.cache
-/coverage
 composer.lock
+
+# Build, test, and analysis output
+/build
+/coverage
 .phpunit.cache
 .phpunit.result.cache
+
+# Local agent settings (.claude is a symlink to .agents)
+/.agents/settings.local.json
+
+# OS and editor files
 .DS_Store
+Thumbs.db
 .idea
 .vscode

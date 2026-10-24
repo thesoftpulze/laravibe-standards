@@ -41,6 +41,23 @@ final class UserResource extends AppResource
 }
 ```
 
+### Creating a collection
+
+```bash
+php artisan make:resource UserCollection --collection
+```
+
+A collection named `UserCollection` collects `UserResource` from the same namespace automatically. When the names don't follow that pattern, set the resource class explicitly:
+
+```php
+final class TeamMembers extends AppResourceCollection
+{
+    public $collects = UserResource::class;
+}
+```
+
+`UserResource::collection($users)` always collects `UserResource`, so it needs no collection class.
+
 ### Naming rules
 
 - Single resources: singular name ending with `Resource` (e.g. `UserResource`, `PostResource`)
