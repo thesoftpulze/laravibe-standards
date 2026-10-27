@@ -3,7 +3,7 @@ name: laravibe-dto-development
 description: Create, edit, or refactor Data Transfer Objects (DTOs) in app/DTOs using the AsDTO trait from thesoftpulze/laravibe-standards, including hydrating them from requests or arrays and serializing them for responses or Eloquent.
 license: MIT
 metadata:
-  author: Ashok Barua Akas
+  author: Ashok Barua
 ---
 
 # Laravibe DTO Development
@@ -64,24 +64,24 @@ final readonly class UpdateProfileDTO implements Arrayable, Jsonable
 - Keys are matched to constructor parameter names exactly, so input keys must use the same names (`birthday`, not `birth_day`).
 - Unknown keys are ignored. To reject them, add this to the DTO:
 
-  ```php
-  protected static function shouldThrowOnUnknownKeys(): bool
-  {
-      return true;
-  }
-  ```
+    ```php
+    protected static function shouldThrowOnUnknownKeys(): bool
+    {
+        return true;
+    }
+    ```
 
 Values are cast to the parameter type:
 
-| Parameter type | Accepted input |
-| --- | --- |
-| `int`, `float` | numbers and numeric strings |
-| `bool` | booleans and `"1"`, `"0"`, `"true"`, `"false"`, `"on"`, `"off"`, `"yes"`, `"no"` |
-| `string` | strings, numbers, booleans |
-| backed enum | its backing value |
-| unit enum | the case name |
-| `DateTimeInterface`, `Carbon`, `CarbonImmutable` | date strings and timestamps |
-| another DTO (any class with `fromArray()`) | a nested array |
+| Parameter type                                   | Accepted input                                                                   |
+| ------------------------------------------------ | -------------------------------------------------------------------------------- |
+| `int`, `float`                                   | numbers and numeric strings                                                      |
+| `bool`                                           | booleans and `"1"`, `"0"`, `"true"`, `"false"`, `"on"`, `"off"`, `"yes"`, `"no"` |
+| `string`                                         | strings, numbers, booleans                                                       |
+| backed enum                                      | its backing value                                                                |
+| unit enum                                        | the case name                                                                    |
+| `DateTimeInterface`, `Carbon`, `CarbonImmutable` | date strings and timestamps                                                      |
+| another DTO (any class with `fromArray()`)       | a nested array                                                                   |
 
 A missing key falls back to the parameter default, then to `null` when the type is nullable. Otherwise, and for any value that can't be cast, an `InvalidArgumentException` is thrown with the class and property name.
 

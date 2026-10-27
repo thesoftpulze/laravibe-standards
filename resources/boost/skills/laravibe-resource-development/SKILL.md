@@ -3,7 +3,7 @@ name: laravibe-resource-development
 description: Create, edit, or refactor API resources and resource collections in app/Http/Resources using AppResource and AppResourceCollection from thesoftpulze/laravibe-standards, including field helpers, eager-loaded relations, pagination, and Inertia props.
 license: MIT
 metadata:
-  author: Ashok Barua Akas
+  author: Ashok Barua
 ---
 
 # Laravibe Resource Development
@@ -65,15 +65,15 @@ final class UserResource extends AppResource
 
 ## Field helpers
 
-| Helper | Output |
-| --- | --- |
-| `id()` | `id` |
-| `attribute('name')` | `name`, always present (`null` if missing) |
-| `optionalAttribute('email_verified_at')` | only when the attribute was selected on the model |
-| `relation('posts')` | only when the relation is eager loaded, so it never causes a lazy-load query |
-| `createdAt()`, `updatedAt()`, `deletedAt()` | the timestamp as `Y-m-d H:i:s`, only when selected |
-| `timestamps()` | `createdAt()` and `updatedAt()` |
-| `softDeleteTimestamps()` | `timestamps()` and `deletedAt()` |
+| Helper                                      | Output                                                                       |
+| ------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id()`                                      | `id`                                                                         |
+| `attribute('name')`                         | `name`, always present (`null` if missing)                                   |
+| `optionalAttribute('email_verified_at')`    | only when the attribute was selected on the model                            |
+| `relation('posts')`                         | only when the relation is eager loaded, so it never causes a lazy-load query |
+| `createdAt()`, `updatedAt()`, `deletedAt()` | the timestamp as `Y-m-d H:i:s`, only when selected                           |
+| `timestamps()`                              | `createdAt()` and `updatedAt()`                                              |
+| `softDeleteTimestamps()`                    | `timestamps()` and `deletedAt()`                                             |
 
 `attribute()`, `optionalAttribute()`, and `relation()` also accept:
 

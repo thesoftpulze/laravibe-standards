@@ -26,10 +26,10 @@ This package was previously published as `softpulze/laravibe-standards` and used
 
 1. Replace the requirement in your `composer.json`:
 
-   ```bash
-   composer remove softpulze/laravibe-standards
-   composer require thesoftpulze/laravibe-standards
-   ```
+    ```bash
+    composer remove softpulze/laravibe-standards
+    composer require thesoftpulze/laravibe-standards
+    ```
 
 2. Update namespace imports and references from `SoftPulze\LaravibeStandards\...` to `TheSoftPulze\LaravibeStandards\...`.
 
@@ -217,7 +217,7 @@ Please review [our security policy](.github/SECURITY.md) on how to report securi
 
 ## Credits
 
-- [Ashok Barua Akas](https://github.com/thesoftpulze)
+- [Ashok Barua](https://ashokbaruaakas.com)
 - [All Contributors](../../contributors)
 
 ## License
