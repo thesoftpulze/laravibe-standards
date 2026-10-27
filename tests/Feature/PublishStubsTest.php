@@ -6,8 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use TheSoftPulze\LaravibeStandards\LaravibeStandardsServiceProvider;
 
 $expectedStubs = [
-    'action.stub' => 'stubs/laravibe-standards/action.stub',
-    'dto.stub' => 'stubs/laravibe-standards/dto.stub',
+    'action.stub' => 'stubs/action.stub',
+    'dto.stub' => 'stubs/dto.stub',
     'enum.stub' => 'stubs/enum.stub',
     'enum.backed.stub' => 'stubs/enum.backed.stub',
     'resource.stub' => 'stubs/resource.stub',

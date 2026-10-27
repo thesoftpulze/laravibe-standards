@@ -6,13 +6,13 @@ use Illuminate\Support\Facades\File;
 
 beforeEach(function () {
     File::deleteDirectory(app_path('Actions'));
-    File::deleteDirectory(base_path('stubs/laravibe-standards'));
+    File::delete(base_path('stubs/action.stub'));
     File::deleteDirectory(base_path('tests/Feature/Actions'));
 });
 
 afterEach(function () {
     File::deleteDirectory(app_path('Actions'));
-    File::deleteDirectory(base_path('stubs/laravibe-standards'));
+    File::delete(base_path('stubs/action.stub'));
     File::deleteDirectory(base_path('tests/Feature/Actions'));
 });
 
@@ -44,8 +44,8 @@ it('generates an action with a nested namespace', function () {
 });
 
 it('uses the published stub when present', function () {
-    File::ensureDirectoryExists(base_path('stubs/laravibe-standards'));
-    File::put(base_path('stubs/laravibe-standards/action.stub'), "<?php\n\nnamespace {{ namespace }};\n\n// custom\nclass {{ class }} {}\n");
+    File::ensureDirectoryExists(base_path('stubs'));
+    File::put(base_path('stubs/action.stub'), "<?php\n\nnamespace {{ namespace }};\n\n// custom\nclass {{ class }} {}\n");
 
     $this->artisan('make:action', ['name' => 'CreateInvoiceAction'])
         ->assertSuccessful();

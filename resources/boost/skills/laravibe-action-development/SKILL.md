@@ -21,7 +21,7 @@ php artisan make:action Account/UpdateProfileAction --pest   # also creates test
 
 This creates `app/Actions/Account/UpdateProfileAction.php` with an empty `handle(): void` method. Replace its signature with the real inputs and return type. `--test`, `--pest`, and `--phpunit` also generate a matching test, and `--force` overwrites an existing class.
 
-If `stubs/laravibe-standards/action.stub` exists in the application, the command uses it instead of the package stub. Publish it to customize generated actions:
+If `stubs/action.stub` exists in the application, the command uses it instead of the package stub. Publish it to customize generated actions:
 
 ```bash
 php artisan vendor:publish --tag=laravibe-standards-stubs
