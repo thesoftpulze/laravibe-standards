@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TheSoftPulze\LaravibeStandards;
 
 use Illuminate\Support\ServiceProvider;
+use TheSoftPulze\LaravibeStandards\Console\Commands\MakeActionCommand;
 use TheSoftPulze\LaravibeStandards\Console\Commands\MakeDTOCommand;
 
 class LaravibeStandardsServiceProvider extends ServiceProvider
@@ -19,6 +20,7 @@ class LaravibeStandardsServiceProvider extends ServiceProvider
         }
 
         $this->publishes([
+            __DIR__.'/../stubs/action.stub' => base_path('stubs/laravibe-standards/action.stub'),
             __DIR__.'/../stubs/dto.stub' => base_path('stubs/laravibe-standards/dto.stub'),
             __DIR__.'/../stubs/enum.stub' => base_path('stubs/enum.stub'),
             __DIR__.'/../stubs/enum.backed.stub' => base_path('stubs/enum.backed.stub'),
@@ -27,6 +29,7 @@ class LaravibeStandardsServiceProvider extends ServiceProvider
         ], ['laravibe-standards', 'laravibe-standards-stubs']);
 
         $this->commands([
+            MakeActionCommand::class,
             MakeDTOCommand::class,
         ]);
     }

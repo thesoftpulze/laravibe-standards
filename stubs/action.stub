@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+final readonly class {{ class }}
+{
+    /**
+     * Handle the action.
+     */
+    public function handle(): void
+    {
+        //
+    }
+}

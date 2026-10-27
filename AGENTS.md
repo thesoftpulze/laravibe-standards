@@ -13,7 +13,7 @@ This repository is a Laravel package. Keep the package focused, idiomatic, and e
 ## Package Map
 
 - `src/DTOs`, `src/Enums`, `src/Resources`: the public API (`AsDTO`, `HasEnumMetadata`, `AppResource`, `AppResourceCollection`), each with a `README.md` guide.
-- `src/Console/Commands`: the `make:dto` command. `make:enum` and `make:resource` are Laravel's own commands, customized only through the published stubs.
+- `src/Console/Commands`: the `make:action` and `make:dto` commands. `make:enum` and `make:resource` are Laravel's own commands, customized only through the published stubs.
 - `stubs/`: generator stubs, published with the `laravibe-standards-stubs` tag.
 - `resources/boost/`: the Boost guideline and skills installed into consuming applications. `tests/Feature/BoostResourcesTest.php` fails if they reference classes, methods, or publish tags that don't exist.
 

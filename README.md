@@ -35,15 +35,55 @@ This package was previously published as `softpulze/laravibe-standards` and used
 
 ### Publishing Stubs
 
-Publish the package stubs so Laravel's `make:enum` and `make:resource` commands, and the package's `make:dto` command, generate classes that follow these conventions:
+Publish the package stubs so Laravel's `make:enum` and `make:resource` commands, and the package's `make:action` and `make:dto` commands, generate classes that follow these conventions:
 
 ```bash
 php artisan vendor:publish --tag="laravibe-standards-stubs"
 ```
 
-Without the published stubs, `make:enum` and `make:resource` generate plain Laravel classes.
+Without the published stubs, `make:enum` and `make:resource` generate plain Laravel classes. `make:action` and `make:dto` use the package stubs until you publish and customize them in `stubs/laravibe-standards`.
 
 ## Usage
+
+### Actions
+
+Actions hold one business operation each, so controllers, jobs, and commands stay thin.
+
+**Generate an action:**
+
+```bash
+php artisan make:action CreateInvoiceAction
+php artisan make:action Account/UpdateProfileAction --pest
+```
+
+The class is created in `app/Actions`. Pass `--test`, `--pest`, or `--phpunit` to also generate a matching test in `tests/Feature/Actions`.
+
+**Define an action:**
+
+```php
+final readonly class UpdateProfileAction
+{
+    public function handle(User $user, UpdateProfileDTO $data): User
+    {
+        $user->update($data->toEloquent());
+
+        return $user;
+    }
+}
+```
+
+**Use it from a controller:**
+
+```php
+public function update(UpdateProfileRequest $request, UpdateProfileAction $action): RedirectResponse
+{
+    $action->handle($request->user(), UpdateProfileDTO::from($request));
+
+    return back();
+}
+```
+
+Keep validation in form requests, inject dependencies through the constructor, and wrap multi-record writes in a transaction.
 
 ### DTOs (Data Transfer Objects)
 
