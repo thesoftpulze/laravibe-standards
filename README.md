@@ -1,64 +1,49 @@
 <div align="center">
-    <h1>Laravibe Standards</h1>
+
+# Laravibe Standards
+
+**Conventions, generators and base classes for Laravel apps built the LaraVibe way.**
+
+[![Packagist](https://img.shields.io/packagist/v/thesoftpulze/laravibe-standards.svg?style=flat-square)](https://packagist.org/packages/thesoftpulze/laravibe-standards)
+[![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?style=flat-square&logo=php)](https://php.net)
+[![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?style=flat-square&logo=laravel)](https://laravel.com)
+[![Tests](https://img.shields.io/github/actions/workflow/status/thesoftpulze/laravibe-standards/tests.yml?branch=main&label=Tests&style=flat-square)](https://github.com/thesoftpulze/laravibe-standards/actions)
+[![Downloads](https://img.shields.io/packagist/dt/thesoftpulze/laravibe-standards.svg?style=flat-square)](https://packagist.org/packages/thesoftpulze/laravibe-standards)
+[![License](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)](LICENSE.md)
+
+Made by [The SoftPulze](https://softpulze.com)
+
 </div>
 
-<p align="center">
-    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://img.shields.io/packagist/v/thesoftpulze/laravibe-standards.svg?style=flat-square" alt="Packagist"></a>
-    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://img.shields.io/packagist/php-v/thesoftpulze/laravibe-standards.svg?style=flat-square" alt="PHP from Packagist"></a>
-    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://badge.laravel.cloud/badge/thesoftpulze/laravibe-standards?style=flat" alt="Laravel versions"></a>
-    <a href="https://github.com/thesoftpulze/laravibe-standards/actions"><img alt="GitHub Workflow Status (main)" src="https://img.shields.io/github/actions/workflow/status/thesoftpulze/laravibe-standards/tests.yml?branch=main&label=Tests&style=flat-square"></a>
-    <a href="https://packagist.org/packages/thesoftpulze/laravibe-standards"><img src="https://img.shields.io/packagist/dt/thesoftpulze/laravibe-standards.svg?style=flat-square" alt="Total Downloads"></a>
-</p>
+## Features
 
-Standard conventions, structure, and tooling for Laravel apps built the LaraVibe way.
+- **Actions:** `make:action` generates single-purpose action classes in `app/Actions`, with an optional test.
+- **DTOs:** `make:dto` and the `AsDTO` trait for immutable, typed DTOs. See the [DTO guide](src/DTOs/README.md).
+- **Enums:** the `HasEnumMetadata` trait adds labels, options and validation helpers. See the [enum guide](src/Enums/README.md).
+- **Resources:** `AppResource` and `AppResourceCollection` with field helpers for API and Inertia responses. See the [resource guide](src/Resources/README.md).
+- **Stubs** for `make:action`, `make:dto`, `make:enum` and `make:resource`.
+- **Laravel Boost** guideline and skills for AI agents.
 
 ## Installation
 
-You can install the package via Composer:
+Requires PHP 8.4+ and Laravel 13+.
 
 ```bash
 composer require thesoftpulze/laravibe-standards
-```
-
-### Upgrading from `softpulze/laravibe-standards`
-
-This package was previously published as `softpulze/laravibe-standards` and used the `SoftPulze\LaravibeStandards` namespace. The old package is abandoned, and both the package name and namespace changed in `v0.4.0`.
-
-1. Replace the requirement in your `composer.json`:
-
-    ```bash
-    composer remove softpulze/laravibe-standards
-    composer require thesoftpulze/laravibe-standards
-    ```
-
-2. Update namespace imports and references from `SoftPulze\LaravibeStandards\...` to `TheSoftPulze\LaravibeStandards\...`.
-
-### Publishing Stubs
-
-Publish the package stubs so Laravel's `make:enum` and `make:resource` commands, and the package's `make:action` and `make:dto` commands, generate classes that follow these conventions:
-
-```bash
 php artisan vendor:publish --tag="laravibe-standards-stubs"
 ```
 
-Without the published stubs, `make:enum` and `make:resource` generate plain Laravel classes. `make:action` and `make:dto` use the package stubs until you publish them. All stubs are published to the application's `stubs` directory, where you can customize them.
+The stubs are published to the application's `stubs` directory. Without them, `make:enum` and `make:resource` generate plain Laravel classes.
+
+Upgrading from `softpulze/laravibe-standards`? Require `thesoftpulze/laravibe-standards` instead and rename `SoftPulze\LaravibeStandards` imports to `TheSoftPulze\LaravibeStandards`.
 
 ## Usage
 
 ### Actions
 
-Actions hold one business operation each, so controllers, jobs, and commands stay thin.
-
-**Generate an action:**
-
 ```bash
-php artisan make:action CreateInvoiceAction
 php artisan make:action Account/UpdateProfileAction --pest
 ```
-
-The class is created in `app/Actions`. Pass `--test`, `--pest`, or `--phpunit` to also generate a matching test in `tests/Feature/Actions`.
-
-**Define an action:**
 
 ```php
 final readonly class UpdateProfileAction
@@ -72,109 +57,56 @@ final readonly class UpdateProfileAction
 }
 ```
 
-**Use it from a controller:**
+Pass `--test`, `--pest` or `--phpunit` to also generate a test in `tests/Feature/Actions`.
 
-```php
-public function update(UpdateProfileRequest $request, UpdateProfileAction $action): RedirectResponse
-{
-    $action->handle($request->user(), UpdateProfileDTO::from($request));
-
-    return back();
-}
-```
-
-Keep validation in form requests, inject dependencies through the constructor, and wrap multi-record writes in a transaction.
-
-### DTOs (Data Transfer Objects)
-
-Laravibe Standards provides a convention for defining immutable, typed DTOs with automatic hydration and serialization.
-
-**Generate a DTO:**
+### DTOs
 
 ```bash
-php artisan make:dto UserProfileDTO
 php artisan make:dto Account/UpdateProfileDTO
 ```
 
-**Define a DTO:**
-
 ```php
-final readonly class UserProfileDTO implements Arrayable, Jsonable
+final readonly class UpdateProfileDTO implements Arrayable, Jsonable
 {
     use \TheSoftPulze\LaravibeStandards\DTOs\Concerns\AsDTO;
 
     public function __construct(
         public string $name,
         public ?string $bio = null,
-    ) {
-    }
+    ) {}
 }
+
+$dto = UpdateProfileDTO::from($request);
+$dto->toArray();
+$dto->toEloquent();
+$dto->with(['bio' => 'Senior Dev']);
 ```
-
-**Hydrate and serialize:**
-
-```php
-$dto = UserProfileDTO::from($request);
-$dto = UserProfileDTO::fromArray(['name' => 'Alice', 'bio' => 'Developer']);
-
-$array = $dto->toArray();
-$json  = $dto->toJson();
-$data  = $dto->toEloquent();
-
-$updated = $dto->with(['bio' => 'Senior Dev']);
-```
-
-See the [full DTO guide](src/DTOs/README.md) for conventions, type casting, and advanced usage.
 
 ### Enums
 
-Laravibe Standards provides a shared `HasEnumMetadata` trait with label, option, and validation helpers for backed and unit enums.
-
-**Generate an enum:**
-
 ```bash
-php artisan make:enum ToastType --int
 php artisan make:enum ToastType --string
 ```
 
-**Define an enum:**
-
 ```php
-enum ToastType: int
+enum ToastType: string
 {
     use \TheSoftPulze\LaravibeStandards\Enums\Concerns\HasEnumMetadata;
 
-    case Error = 1;
-    case Success = 2;
-    case Warning = 3;
-    case Info = 4;
+    case Success = 'success';
+    case Error = 'error';
 }
+
+ToastType::options();
+ToastType::values();
+ToastType::Success->label();
 ```
-
-**Use helpers:**
-
-```php
-ToastType::options();    // [{name: 'Error', value: 1, label: 'Error'}, ...]
-ToastType::values();     // [1, 2, 3, 4]
-ToastType::isValidValue(2);  // true
-ToastType::fromValueOrFail(1); // ToastType::Error
-ToastType::Error->label();     // 'Error'
-```
-
-See the [full enum guide](src/Enums/README.md) for conventions, the concern contract, and design rules.
 
 ### Resources
 
-Laravibe Standards provides base resource classes for API and Inertia responses with reusable field helpers.
-
-**Generate a resource:**
-
 ```bash
 php artisan make:resource UserResource
-php artisan make:resource UserCollection --collection
 ```
-
-**Define a resource:**
 
 ```php
 final class UserResource extends \TheSoftPulze\LaravibeStandards\Resources\AppResource
@@ -184,42 +116,39 @@ final class UserResource extends \TheSoftPulze\LaravibeStandards\Resources\AppRe
         return [
             $this->id(),
             $this->attribute('name'),
-            $this->attribute('email'),
             ...$this->timestamps(),
         ];
     }
 }
-```
 
-**Use in controllers:**
-
-```php
-UserResource::make($user);                           // single
-UserResource::collection(User::paginate());          // paginated
-
-// Inertia
 return inertia('users/Show', ['user' => UserResource::make($user)->toInertia()]);
 ```
 
-See the [full resource guide](src/Resources/README.md) for helpers, conventions, and serialization rules.
+## AI Agents
+
+```bash
+php artisan boost:install
+```
+
+When prompted for third-party packages, select **thesoftpulze/laravibe-standards** to install the action, DTO, enum and resource guidelines. Run `php artisan boost:update` after updating the package.
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+See [CHANGELOG](CHANGELOG.md) for recent changes.
 
 ## Contributing
 
-Thank you for considering contributing to Laravibe Standards! Please review our [contributing guide](.github/CONTRIBUTING.md) to get started.
-
-## Security Vulnerabilities
-
-Please review [our security policy](.github/SECURITY.md) on how to report security vulnerabilities.
+See the [contributing guide](.github/CONTRIBUTING.md) and [security policy](.github/SECURITY.md).
 
 ## Credits
 
-- [Ashok Barua](https://ashokbaruaakas.com)
-- [All Contributors](../../contributors)
+Laravibe Standards is developed and maintained by [The SoftPulze](https://softpulze.com).
+
+- [Ashok Barua](https://ashokbaruaakas.com), creator and maintainer
+- [All contributors](https://github.com/thesoftpulze/laravibe-standards/graphs/contributors)
+
+Built on [Laravel](https://laravel.com).
 
 ## License
 
-Laravibe Standards is open-sourced software licensed under the [MIT license](LICENSE.md).
+Laravibe Standards is open-source software licensed under the [MIT license](LICENSE.md). Copyright © 2025-present The SoftPulze.
