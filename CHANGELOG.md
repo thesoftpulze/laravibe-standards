@@ -1,6 +1,17 @@
 # Release Notes
 
-## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.7.1...HEAD)
+## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.7.2...HEAD)
+
+## [v0.7.2](https://github.com/thesoftpulze/laravibe-standards/compare/v0.7.1...v0.7.2) - 2026-10-27
+
+<!-- Release notes generated using configuration in .github/release.yml at v0.7.2 -->
+### What's Changed
+
+#### Documentation
+
+* docs: simplify README by @ashokbaruaakas in https://github.com/thesoftpulze/laravibe-standards/pull/20
+
+**Full Changelog**: https://github.com/thesoftpulze/laravibe-standards/compare/v0.7.1...v0.7.2
 
 ## [v0.7.1](https://github.com/thesoftpulze/laravibe-standards/compare/v0.7.0...v0.7.1) - 2026-10-27
 
