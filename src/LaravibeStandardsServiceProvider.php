@@ -20,8 +20,8 @@ class LaravibeStandardsServiceProvider extends ServiceProvider
         }
 
         $this->publishes([
-            __DIR__.'/../stubs/action.stub' => base_path('stubs/laravibe-standards/action.stub'),
-            __DIR__.'/../stubs/dto.stub' => base_path('stubs/laravibe-standards/dto.stub'),
+            __DIR__.'/../stubs/action.stub' => base_path('stubs/action.stub'),
+            __DIR__.'/../stubs/dto.stub' => base_path('stubs/dto.stub'),
             __DIR__.'/../stubs/enum.stub' => base_path('stubs/enum.stub'),
             __DIR__.'/../stubs/enum.backed.stub' => base_path('stubs/enum.backed.stub'),
             __DIR__.'/../stubs/resource.stub' => base_path('stubs/resource.stub'),

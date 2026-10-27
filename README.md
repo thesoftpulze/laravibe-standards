@@ -41,7 +41,7 @@ Publish the package stubs so Laravel's `make:enum` and `make:resource` commands,
 php artisan vendor:publish --tag="laravibe-standards-stubs"
 ```
 
-Without the published stubs, `make:enum` and `make:resource` generate plain Laravel classes. `make:action` and `make:dto` use the package stubs until you publish and customize them in `stubs/laravibe-standards`.
+Without the published stubs, `make:enum` and `make:resource` generate plain Laravel classes. `make:action` and `make:dto` use the package stubs until you publish them. All stubs are published to the application's `stubs` directory, where you can customize them.
 
 ## Usage
 

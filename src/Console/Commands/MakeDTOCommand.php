@@ -66,7 +66,7 @@ final class MakeDTOCommand extends GeneratorCommand
      */
     private function resolveStubPath(string $stub): string
     {
-        $published = base_path('stubs/laravibe-standards/'.$stub);
+        $published = base_path('stubs/'.$stub);
 
         return file_exists($published)
             ? $published

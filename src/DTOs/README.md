@@ -54,7 +54,7 @@ Create a DTO with:
 php artisan make:dto Account/UpdateProfileDTO
 ```
 
-The command creates the class under app/DTOs. It uses the published stub at stubs/laravibe-standards/dto.stub when present, and the package stub otherwise.
+The command creates the class under app/DTOs. It uses the published stub at stubs/dto.stub when present, and the package stub otherwise.
 
 ## Hydration and Serialization
 
