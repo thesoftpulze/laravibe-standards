@@ -3,7 +3,7 @@ name: laravibe-enum-development
 description: Create, edit, or refactor PHP enums in app/Enums using the HasEnumMetadata trait from thesoftpulze/laravibe-standards, including labels, select options, value lists, and enum validation.
 license: MIT
 metadata:
-  author: Ashok Barua Akas
+  author: Ashok Barua
 ---
 
 # Laravibe Enum Development
@@ -60,17 +60,17 @@ enum InvoiceStatus: int
 
 ## Helpers
 
-| Method | Returns |
-| --- | --- |
-| `InvoiceStatus::InProgress->label()` | `"In Progress"`, derived from the case name |
-| `InvoiceStatus::InProgress->toOption()` | `['name' => 'InProgress', 'value' => 2, 'label' => 'In Progress']` |
-| `InvoiceStatus::options()` | `toOption()` for every case, for select inputs |
-| `InvoiceStatus::values()` | backing values (case names for unit enums) |
-| `InvoiceStatus::names()` | case names |
-| `InvoiceStatus::isValidValue(2)` | `true`; the comparison is strict, so `'2'` is `false` |
-| `InvoiceStatus::isValidName('paid')` | `true`; case-insensitive |
-| `InvoiceStatus::tryFromName('paid')` | `InvoiceStatus::Paid` or `null`; case-insensitive |
-| `InvoiceStatus::fromValueOrFail(3)` | `InvoiceStatus::Paid`; falls back to a case-insensitive name match, then throws `InvalidArgumentException` |
+| Method                                  | Returns                                                                                                    |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `InvoiceStatus::InProgress->label()`    | `"In Progress"`, derived from the case name                                                                |
+| `InvoiceStatus::InProgress->toOption()` | `['name' => 'InProgress', 'value' => 2, 'label' => 'In Progress']`                                         |
+| `InvoiceStatus::options()`              | `toOption()` for every case, for select inputs                                                             |
+| `InvoiceStatus::values()`               | backing values (case names for unit enums)                                                                 |
+| `InvoiceStatus::names()`                | case names                                                                                                 |
+| `InvoiceStatus::isValidValue(2)`        | `true`; the comparison is strict, so `'2'` is `false`                                                      |
+| `InvoiceStatus::isValidName('paid')`    | `true`; case-insensitive                                                                                   |
+| `InvoiceStatus::tryFromName('paid')`    | `InvoiceStatus::Paid` or `null`; case-insensitive                                                          |
+| `InvoiceStatus::fromValueOrFail(3)`     | `InvoiceStatus::Paid`; falls back to a case-insensitive name match, then throws `InvalidArgumentException` |
 
 To change a label, override `label()` on the enum:
 

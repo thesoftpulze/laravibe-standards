@@ -3,7 +3,7 @@ name: laravibe-action-development
 description: Create, edit, or refactor single-purpose action classes in app/Actions generated with the make:action command from thesoftpulze/laravibe-standards, including moving business logic out of controllers, jobs, and commands.
 license: MIT
 metadata:
-  author: Ashok Barua Akas
+  author: Ashok Barua
 ---
 
 # Laravibe Action Development
