@@ -1,6 +1,25 @@
 # Release Notes
 
-## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.5.0...HEAD)
+## [Unreleased](https://github.com/thesoftpulze/laravibe-standards/compare/v0.6.0...HEAD)
+
+## [v0.6.0](https://github.com/thesoftpulze/laravibe-standards/compare/v0.5.0...v0.6.0) - 2026-10-27
+
+<!-- Release notes generated using configuration in .github/release.yml at v0.6.0 -->
+### What's Changed
+
+#### Enhancements
+
+* feat: add make:action command by @ashokbaruaakas in https://github.com/thesoftpulze/laravibe-standards/pull/17
+
+#### Dependencies
+
+* chore(deps): bump shivammathur/setup-php from 2.37.2 to 2.40.0 by @dependabot[bot] in https://github.com/thesoftpulze/laravibe-standards/pull/15
+
+### New Contributors
+
+* @dependabot[bot] made their first contribution in https://github.com/thesoftpulze/laravibe-standards/pull/15
+
+**Full Changelog**: https://github.com/thesoftpulze/laravibe-standards/compare/v0.5.0...v0.6.0
 
 ## [v0.5.0](https://github.com/thesoftpulze/laravibe-standards/compare/v0.4.0...v0.5.0) - 2026-10-24
 
